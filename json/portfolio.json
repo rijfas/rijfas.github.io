@@ -1,0 +1,56 @@
+[
+    {
+        "id": 1,
+        "title": "Scan Zeit",
+        "description": "Scan Zeit is a mobile application where shopkeepers have an app that shows QR code and users can scan this QR code which will automatically add that user to the visitor list. This should replace manual entry of contact details in the shop due to COVID.",
+        "createdOn": "May 2021",
+        "technologies": "Flutter, Firebase, Bloc, Hive",
+        "role": "Fullstack",
+        "live": "https://github.com/rijfas/scan-zeit"
+    },
+    {
+        "id": 2,
+        "title": "Payattu Book",
+        "description": "Payattu Book is an application developed for managing PanaPayattu, a crowdfunding process common in the Malabar area and specifically in kadathanadu area.",
+        "createdOn": "Feb 2022",
+        "technologies": "Flutter, Supabase, Bloc, Hive",
+        "role": "Fullstack",
+        "live": "https://github.com/rijfas/payattubook"
+    },
+    {
+        "id": 3,
+        "title": "ProjectMan",
+        "description": "A leading solution for hassle free project management. Track your project pathway and lead the tasks in a single click.",
+        "createdOn": "Mar 2022",
+        "technologies": "Django, Python, TailwindCSS",
+        "role": "Fullstack",
+        "live": "https://github.com/rijfas/projectman"
+    },
+    {
+        "id": 4,
+        "title": "Alpha(Discord/Telegram Bot)",
+        "description": "Alpha bot is a virtual friend who does simple calculations,crack jokes,tell to stories and also give you a great chitchat.Alpha bot is purely built with python. You could deploy him as discord bot or CLI tool",
+        "createdOn": "Oct 2021",
+        "technologies": "Flask, Python, Telegram API, Discord API",
+        "role": "Fullstack",
+        "live": "https://github.com/rijfas/saturday-hack-night-dialogflow/tree/main/Dialogflow%20/%2055%20%7C%20Alpha"
+    },
+    {
+        "id": 5,
+        "title": "TinkerHub FC Website",
+        "description": "The official website for TinkerHub Farook College localchapter",
+        "createdOn": "Sep 2021",
+        "technologies": "HTML, CSS, JS, TailwindCSS",
+        "role": "Project Lead, Frontend",
+        "live": "tinkerhub.farookcollege.ac.in"
+    },
+    {
+        "id": 6,
+        "title": "Scattered Thoughts",
+        "description": "A simple blog web app using google sheets!",
+        "createdOn": "Oct 2021",
+        "technologies": "HTML, CSS, JS TailwindCSS, Google Sheets API",
+        "role": "Fullstack",
+        "live": "https://github.com/rijfas/saturday-hacknight-googlesheets"
+    }
+]
