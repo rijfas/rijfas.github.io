@@ -52,5 +52,32 @@
         "technologies": "HTML, CSS, JS TailwindCSS, Google Sheets API",
         "role": "Fullstack",
         "live": "https://github.com/rijfas/saturday-hacknight-googlesheets"
+    },
+    {
+        "id": 7,
+        "title": "NPTEL Mock Test",
+        "description": "A lightweight mock test for NPTEL exams",
+        "createdOn": "Aug 2021",
+        "technologies": "HTML, CSS, JS TailwindCSS, Github Pages",
+        "role": "Fullstack",
+        "live": "https://github.com/rijfas/nptel_mock_test"
+    },
+    {
+        "id": 8,
+        "title": "FC Times",
+        "description": "An all in one solution for farookians!",
+        "createdOn": "Feb 2020",
+        "technologies": "Flutter, Dart, Github Pages",
+        "role": "Fullstack",
+        "live": "https://github.com/rijfas/fc_times"
+    },
+    {
+        "id": 9,
+        "title": "My Little Diary",
+        "description": "An Open-Source simple Diary App built using flutter",
+        "createdOn": "Feb 2022",
+        "technologies": "Flutter, Dart, Bloc, Hive",
+        "role": "Fullstack",
+        "live": "https://github.com/rijfas/my_little_diary"
     }
 ]
