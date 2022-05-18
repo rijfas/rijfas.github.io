@@ -6,7 +6,7 @@
         "createdOn": "May 2021",
         "technologies": "Flutter, Firebase, Bloc, Hive",
         "role": "Fullstack",
-        "live": "https://github.com/rijfas/scan-zeit"
+        "github": "https://github.com/rijfas/scan-zeit"
     },
     {
         "id": 2,
@@ -15,7 +15,7 @@
         "createdOn": "Feb 2022",
         "technologies": "Flutter, Supabase, Bloc, Hive",
         "role": "Fullstack",
-        "live": "https://github.com/rijfas/payattubook"
+        "github": "https://github.com/rijfas/payattubook"
     },
     {
         "id": 3,
@@ -24,7 +24,7 @@
         "createdOn": "Mar 2022",
         "technologies": "Django, Python, TailwindCSS",
         "role": "Fullstack",
-        "live": "https://github.com/rijfas/projectman"
+        "github": "https://github.com/rijfas/projectman"
     },
     {
         "id": 4,
@@ -33,7 +33,7 @@
         "createdOn": "Oct 2021",
         "technologies": "Flask, Python, Telegram API, Discord API",
         "role": "Fullstack",
-        "live": "https://github.com/rijfas/saturday-hack-night-dialogflow/tree/main/Dialogflow%20/%2055%20%7C%20Alpha"
+        "github": "https://github.com/rijfas/saturday-hack-night-dialogflow/tree/main/Dialogflow%20/%2055%20%7C%20Alpha"
     },
     {
         "id": 5,
@@ -42,7 +42,7 @@
         "createdOn": "Sep 2021",
         "technologies": "HTML, CSS, JS, TailwindCSS",
         "role": "Project Lead, Frontend",
-        "live": "tinkerhub.farookcollege.ac.in"
+        "github": "tinkerhub.farookcollege.ac.in"
     },
     {
         "id": 6,
@@ -51,7 +51,7 @@
         "createdOn": "Oct 2021",
         "technologies": "HTML, CSS, JS TailwindCSS, Google Sheets API",
         "role": "Fullstack",
-        "live": "https://github.com/rijfas/saturday-hacknight-googlesheets"
+        "github": "https://github.com/rijfas/saturday-hacknight-googlesheets"
     },
     {
         "id": 7,
@@ -60,7 +60,7 @@
         "createdOn": "Aug 2021",
         "technologies": "HTML, CSS, JS TailwindCSS, Github Pages",
         "role": "Fullstack",
-        "live": "https://github.com/rijfas/nptel_mock_test"
+        "github": "https://github.com/rijfas/nptel_mock_test"
     },
     {
         "id": 8,
@@ -69,7 +69,7 @@
         "createdOn": "Feb 2020",
         "technologies": "Flutter, Dart, Github Pages",
         "role": "Fullstack",
-        "live": "https://github.com/rijfas/fc_times"
+        "github": "https://github.com/rijfas/fc_times"
     },
     {
         "id": 9,
@@ -78,6 +78,33 @@
         "createdOn": "Feb 2022",
         "technologies": "Flutter, Dart, Bloc, Hive",
         "role": "Fullstack",
-        "live": "https://github.com/rijfas/my_little_diary"
+        "github": "https://github.com/rijfas/my_little_diary"
+    },
+    {
+        "id": 10,
+        "title": "Oreo Bot",
+        "description": "Oreo is a simple Notion Bot that creates notion pages inside discord",
+        "createdOn": "May 2022",
+        "technologies": "Node JS, Notion API, DiscordJS, Discord API",
+        "role": "Backend",
+        "github": "https://github.com/amjadcp/SHN-Notion-API"
+    },
+    {
+        "id": 11,
+        "title": "E-Shelf",
+        "description": "Simple easy to manage study materials repo",
+        "createdOn": "Jan 2022",
+        "technologies":  "Django, Python, TailwindCSS",
+        "role": "Fullstack",
+        "github": "https://github.com/amjadcp/SHN-Notion-API"
+    },
+    {
+        "id": 12,
+        "title": "Aiwa Pharmacy Web",
+        "description": "The offical website for aiwapharmacy, UAE",
+        "createdOn": "Oct 2020",
+        "technologies":  "HTML, CSS, JS, jQuery, MaterialCSS",
+        "role": "Fullstack",
+        "github": "www.aiwapharmacyweb.com"
     }
 ]

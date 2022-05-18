@@ -7,7 +7,8 @@ const projectItem = ({
   createdOn,
   technologies,
   role,
-  live,
+  live = "",
+  github = "",
 }) => `<div class="portfolio-item">
 <div class="portfolio-item-thumbnail">
   <img src="img/portfolio/${id}.png" alt="">
@@ -23,7 +24,7 @@ const projectItem = ({
       <li>Created on - <span class="pcreatedon">${createdOn}</span></li>
       <li>technologies used - <span class="ptechnologies">${technologies}</span></li>
       <li>Role - <span class="prole">${role}</span></li>
-      <li>View Live - <span><a href="${live}" class="plive">View on GitHub</a></span></li>
+      <li>View Project - <span><a href="${github}" class="pgithub"></a></span></li>
     </ul>
   </div>
 </div>
@@ -129,7 +130,7 @@ function showPortfolioDetails(portfolioItem) {
   const createdOn = portfolioItem.querySelector(".pcreatedon").innerHTML;
   const technologies = portfolioItem.querySelector(".ptechnologies").innerHTML;
   const role = portfolioItem.querySelector(".prole").innerHTML;
-  const live = portfolioItem.querySelector(".plive").href;
+  const live = portfolioItem.querySelector(".pgithub").href;
 
   document.querySelector(".pp-thumbnail img").src = portfolioItem.querySelector(
     ".portfolio-item-thumbnail img"
@@ -139,7 +140,8 @@ function showPortfolioDetails(portfolioItem) {
   document.querySelector("#created-on").innerHTML = createdOn;
   document.querySelector("#technologies").innerHTML = technologies;
   document.querySelector("#role").innerHTML = role;
-  document.querySelector("#live").href = live;
+  document.querySelector("#github").href = live;
+  document.querySelector("#github").innerHTML = "view on github";
 }
 
 // function toggleSuccessMessage() {
