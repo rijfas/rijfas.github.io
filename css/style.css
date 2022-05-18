@@ -881,9 +881,6 @@ button{
 
 }
 
-.message-popup.active{
-    visibility: visible;
-}
 
 .message-popup{
     position: fixed;
@@ -892,7 +889,6 @@ button{
     transform: translate(-50%, -50%);
     z-index: 200;
     overflow-y: auto;
-    visibility: hidden;
 }
 .message-popup .message-inner{
     background-color: var(--white-alpha-25);
