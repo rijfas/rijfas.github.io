@@ -141,3 +141,47 @@ function showPortfolioDetails(portfolioItem) {
   document.querySelector("#role").innerHTML = role;
   document.querySelector("#live").href = live;
 }
+
+// function toggleSuccessMessage() {
+//   hideActiveSection();
+//   document.querySelector(".message-popup").classList.toggle("active");
+// }
+
+// const contactForm = document.forms["contact-form"];
+// contactForm.addEventListener("submit", (e) => {
+//   e.preventDefault();
+//   const AIRTABLE_WEBHOOK =
+//     "https://hooks.airtable.com/workflows/v1/genericWebhook/appk7UjBHcftYL0zF/wflzI54oVydBWyNfm/wtrOW9pRe3aVTYprv";
+//   fetch(AIRTABLE_WEBHOOK, {
+//     // Adding method type
+//     method: "POST",
+//     mode: "no-cors",
+//     // Adding body or contents to send
+//     body: JSON.stringify({
+//       name: e.target["name"].value,
+//       email: e.target["name"].value,
+//       subject: e.target["subject"].value,
+//       message: e.target["message"].value,
+//     }),
+
+//     // Adding headers to the request
+//     headers: {
+//       Accept: "*/*",
+//       "Accept-Encoding": "gzip, deflate, br",
+//       Connection: "keep-alive",
+//       "Content-type": "application/json; charset=UTF-8",
+//     },
+//   })
+//     // Converting to JSON
+//     .then(async (response) => {
+//       console.log(await response.json());
+//     });
+
+//   // Displaying results to console
+// });
+
+// const popupOkButton = document.querySelector(
+//   ".message-popup .message-inner .button-container button"
+// );
+
+// popupOkButton.addEventListener("click", (e) => toggleSuccessMessage());

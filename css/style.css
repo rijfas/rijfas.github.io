@@ -113,6 +113,9 @@ section.active{
 section.fade-out{
     animation: fadeOut 0.5s ease-in-out forwards;
 }
+input:active{
+    background-color: inherit;
+}
 .main{
     max-width: 1200px;
     margin: auto;
@@ -875,4 +878,40 @@ button{
     .pp-header h3{
         font-size: 20px;
     }
+
+}
+
+.message-popup.active{
+    visibility: visible;
+}
+
+.message-popup{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 200;
+    overflow-y: auto;
+    visibility: hidden;
+}
+.message-popup .message-inner{
+    background-color: var(--white-alpha-25);
+    backdrop-filter: var(--backdrop-filter-blur);
+    border: 1px solid var(--white-alpha-40);
+    border-radius: 30px;
+    padding: 10px 20px;
+}
+
+.message-popup .message-inner .button-container{
+    display: flex;
+    justify-content: center;
+}
+
+.message-popup .message-inner .message-content{
+    margin: 50px 0;
+}
+
+.message-popup .message-inner .message-content p {
+    text-align: center;
+    font-size: 18px;
 }
