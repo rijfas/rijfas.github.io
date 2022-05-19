@@ -11,7 +11,7 @@ const projectItem = ({
   github = "",
 }) => `<div class="portfolio-item">
 <div class="portfolio-item-thumbnail">
-  <img src="img/portfolio/${id}.png" alt="">
+  <img src="img/portfolio/${id}.webp" alt="">
 </div>
 <h3 class="portfolio-item-title ptitle">${title}</h3>
 <button type="button" class="btn view-project-button">view project</button>
