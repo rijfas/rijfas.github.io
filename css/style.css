@@ -715,6 +715,17 @@ button{
     display: flex;
     justify-content: center;
     align-items: center;
+    fill: var(--main-color);
+}
+
+.pp-header .btn:hover{
+    fill: var(--white);
+}
+
+.pp-header .btn svg{
+    width: 16px;
+    height: 16px;
+    fill: inherit;
 }
 
 .pp-thumbnail img{
@@ -810,10 +821,12 @@ button{
     border: 1px solid var(--white-alpha-40);
     margin: 6px 4px 0 0;
     transition: all 0.3s ease;
+    fill: var(--main-color);
 }   
 
 .contact-info-item .social-links a:hover{
     color: var(--white);
+    fill: var(--white);
     background-color: var(--main-color);
 }
 
@@ -936,7 +949,6 @@ button{
 
 }
 .session-item-thumbnail img{
-    max-height: 50%;
     width: 100%;
     border-radius: 10px;
 }
@@ -950,3 +962,10 @@ button{
     color: var(--main-color);
     margin-top: 10px;
 }
+
+.social-links svg{
+    width: 16px;
+    height: 16px;
+    fill: inherit;
+}
+
