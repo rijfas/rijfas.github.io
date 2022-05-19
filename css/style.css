@@ -836,7 +836,7 @@ button{
     .home-text .btn{
         margin: 0 7px 15px;
     }
-    .portfolio-item{
+    .portfolio-item, .session-item{
         width: calc(50% - 30px);
     }
 }
@@ -849,7 +849,7 @@ button{
     .about-text{
         margin-top: 30px;
     }
-    .portfolio-item{
+    .portfolio-item, .session-item{
         width: calc(100% - 30px);
     }
     .pp-inner{
@@ -910,4 +910,34 @@ button{
 .message-popup .message-inner .message-content p {
     text-align: center;
     font-size: 18px;
+}
+
+.session-section{
+    padding-bottom: 50px;
+}
+.session-item{
+    /* width: calc((100% / 3) - 30px); */
+    margin: 0 15px 30px;
+    background-color: var(--white-alpha-25);
+    border: 1px solid var(--white-alpha-40);
+    border-radius: 10px;
+    padding: 10px;
+
+
+}
+.session-item-thumbnail{
+
+    display: flex;
+    justify-content: center;
+
+}
+.session-item-thumbnail iframe{
+    width: 100%;
+    border-radius: 10px;
+}
+.session-item h3{
+    font-size: 20px;
+    text-transform: capitalize;
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
