@@ -922,8 +922,12 @@ button{
     border: 1px solid var(--white-alpha-40);
     border-radius: 10px;
     padding: 10px;
+}
 
-
+.session-item-description{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 .session-item-thumbnail{
 
@@ -931,7 +935,8 @@ button{
     justify-content: center;
 
 }
-.session-item-thumbnail iframe{
+.session-item-thumbnail img{
+    max-height: 50%;
     width: 100%;
     border-radius: 10px;
 }
@@ -940,4 +945,8 @@ button{
     text-transform: capitalize;
     margin-top: 20px;
     margin-bottom: 10px;
+}
+.session-item a{
+    color: var(--main-color);
+    margin-top: 10px;
 }
