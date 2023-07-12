@@ -42,7 +42,7 @@
         "createdOn": "Sep 2021",
         "technologies": "HTML, CSS, JS, TailwindCSS",
         "role": "Project Lead, Frontend",
-        "github": "tinkerhub.farookcollege.ac.in"
+        "github": "https://tinkerhub.farookcollege.ac.in"
     },
     {
         "id": 6,
@@ -105,6 +105,6 @@
         "createdOn": "Oct 2020",
         "technologies":  "HTML, CSS, JS, jQuery, MaterialCSS",
         "role": "Fullstack",
-        "github": "www.aiwapharmacyweb.com"
+        "github": "https://www.aiwapharmacyweb.com"
     }
 ]
