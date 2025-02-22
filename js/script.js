@@ -1,3 +1,4 @@
+// Function to handle eye movement
 function moveEyes(x, y) {
   const pupils = document.querySelectorAll(".eyes");
   pupils.forEach((pupil) => {
@@ -21,6 +22,16 @@ function moveEyes(x, y) {
   });
 }
 
+// Function to check if touch is on an eye element
+function isTouchingEye(touch) {
+  const element = document.elementFromPoint(touch.clientX, touch.clientY);
+  return (
+    element &&
+    (element.classList.contains("eyes") ||
+      element.contains(document.querySelector(".eyes")))
+  );
+}
+
 // Keep track of the last known pointer position
 let lastPointerX = window.innerWidth / 2;
 let lastPointerY = window.innerHeight / 2;
@@ -36,8 +47,13 @@ document.addEventListener("mousemove", (event) => {
 document.addEventListener(
   "touchmove",
   (event) => {
-    event.preventDefault();
     const touch = event.touches[0];
+
+    // Only prevent default if touching the eyes
+    if (isTouchingEye(touch)) {
+      event.preventDefault();
+    }
+
     lastPointerX = touch.clientX;
     lastPointerY = touch.clientY;
     moveEyes(lastPointerX, lastPointerY);
@@ -58,7 +74,6 @@ let ticking = false;
 document.addEventListener("scroll", () => {
   if (!ticking) {
     window.requestAnimationFrame(() => {
-      // Adjust the last known position based on scroll
       moveEyes(lastPointerX + window.scrollX, lastPointerY + window.scrollY);
       ticking = false;
     });
@@ -68,11 +83,11 @@ document.addEventListener("scroll", () => {
 
 // Handle window resize
 window.addEventListener("resize", () => {
-  // Center eyes when window is resized
   lastPointerX = window.innerWidth / 2;
   lastPointerY = window.innerHeight / 2;
   moveEyes(lastPointerX, lastPointerY);
 });
+
 const menuButton = document.getElementById("menuButton");
 const dropdownMenu = document.getElementById("dropdownMenu");
 var isOpen = false;
