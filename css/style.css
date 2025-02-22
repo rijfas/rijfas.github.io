@@ -1,7 +1,6 @@
 body {
     font-family: "Inter", system-ui, -apple-system, sans-serif;
     font-optical-sizing: auto;
-    background-color: #000000;
     color: #9ca3af;
 }
 
@@ -100,11 +99,7 @@ body {
     transition: background-color 0.3s ease-in-out, backdrop-filter 0.3s ease-in-out;
 }
 
-.header-container.scrolled {
-    background-color: rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-}
+
 
 .content-wrapper {
     transition: filter 0.3s ease-in-out;
@@ -124,3 +119,16 @@ body {
         scroll-behavior: smooth;
     }
 }
+.header-container.scrolled {
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+@media (prefers-color-scheme: dark) {
+    .header-container.scrolled {
+        background-color: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+    }
+}
+

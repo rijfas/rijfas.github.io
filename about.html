@@ -37,28 +37,36 @@
     <title>rijfas.com / About</title>
 </head>
 
-<body>
+<body class="dark:bg-black">
     <div class="fixed w-full z-50">
         <div class="header-container">
             <div class="max-w-xl mx-auto px-4 sm:px-0">
                 <header class="pt-12 pb-6 flex w-full justify-between items-center relative">
                     <nav aria-label="Breadcrumb" class="text-xs flex items-center gap-2">
-                        <a href="index.html" class="hover:text-white transition-colors" aria-label="Home">rijfas.com</a>
+                        <a href="index.html" class="hover:dark:text-white hover:text-slate-600 transition-colors"
+                            aria-label="Home">rijfas.com</a>
                         <span aria-hidden="true">/</span>
-                        <span aria-current="page" class="text-white">About</span>
+                        <span aria-current="page" class="text-slate-500 dark:text-white">About</span>
                     </nav>
                     <button id="menuButton" aria-label="Toggle navigation menu" aria-expanded="false"
-                        class="text-2xl hover:text-white cursor-pointer transition-all duration-300 ease-in-out">+</button>
+                        class="text-2xl hover:dark:text-white hover:text-slate-600 cursor-pointer transition-all duration-300 ease-in-out">+</button>
                     <nav id="dropdownMenu" aria-label="Site navigation"
-                        class="absolute right-0 left-0 top-24 bg-black rounded-lg p-4 opacity-0 transition-all duration-300 ease-in-out hidden border  border-opacity-75">
+                        class="absolute right-0 left-0 top-24 bg-white dark:bg-black rounded-lg p-4 opacity-0 transition-all duration-300 ease-in-out hidden border  border-opacity-75">
                         <ul class="flex flex-col gap-4 text-sm">
-                            <li><a href="about.html" class=" hover:text-white transition-colors">About</a></li>
-                            <li><a href="work.html" class=" hover:text-white transition-colors">Work</a></li>
-                            <li><a href="thoughts.html" class=" hover:text-white transition-colors">Thoughts</a>
+                            <li><a href="about.html"
+                                    class=" hover:dark:text-white hover:text-slate-600 transition-colors">About</a>
                             </li>
-                            <li><a href="cats.html" class=" hover:text-white transition-colors">Cats</a></li>
+                            <li><a href="work.html"
+                                    class=" hover:dark:text-white hover:text-slate-600 transition-colors">Work</a>
+                            </li>
+                            <li><a href="thoughts.html"
+                                    class=" hover:dark:text-white hover:text-slate-600 transition-colors">Thoughts</a>
+                            </li>
+                            <li><a href="cats.html"
+                                    class=" hover:dark:text-white hover:text-slate-600 transition-colors">Cats</a>
+                            </li>
                             <li><a href="mailto:rijfaskp@gmail.com"
-                                    class=" hover:text-white transition-colors">Contact</a>
+                                    class=" hover:dark:text-white hover:text-slate-600 transition-colors">Contact</a>
                             </li>
                         </ul>
                     </nav>
@@ -70,17 +78,19 @@
     <div class="content-wrapper max-w-xl mx-auto flex flex-col gap-4 px-4 sm:px-0 pt-32">
         <main>
             <article>
-                <h1 class="text-lg mt-4 text-white">Hola! I'm Rijfas,</h1>
+                <h1 class="text-lg mt-4 text-slate-500 dark:text-white">Hola! I'm Rijfas,</h1>
                 <p class="mt-4 text-gray-400 leading-relaxed text-sm">
                     I'm a developer, mentor and part time <a href="https://www.youtube.com/@codeSchoolMalayalam"
-                        class="text-white hover:underline" target="_blank" rel="noopener noreferrer">YouTuber</a> living
+                        class="text-slate-500 dark:text-white hover:underline" target="_blank"
+                        rel="noopener noreferrer">YouTuber</a> living
                     in Calicut, IN.
                     Currently working as a Software Engineer at <a href="https://www.williamslea.com/"
-                        class="text-white hover:underline" target="_blank" rel="noopener noreferrer">WilliamsLea</a>,
+                        class="text-slate-500 dark:text-white hover:underline" target="_blank"
+                        rel="noopener noreferrer">WilliamsLea</a>,
                     where I contribute to
                     innovative digital solutions. Before that, I worked as a Full-Stack Developer at <a
-                        href="https://www.yestack.io/" class="text-white hover:underline" target="_blank"
-                        rel="noopener noreferrer">Yestack</a>,
+                        href="https://www.yestack.io/" class="text-slate-500 dark:text-white hover:underline"
+                        target="_blank" rel="noopener noreferrer">Yestack</a>,
                     where I was involved in creating and maintaining a variety of web applications. Alongside my main
                     roles, I
                     also enjoy collaborating with early-stage startups, friends, and diving into personal projects. This
@@ -92,7 +102,7 @@
                 </p>
             </article>
             <article>
-                <h1 class="text-lg mt-4 text-white">Something Extra if you are intrested,</h1>
+                <h1 class="text-lg mt-4 text-slate-500 dark:text-white">Something Extra if you are intrested,</h1>
                 <p class="mt-4 text-gray-400 leading-relaxed text-sm">
                     My journey into the tech world began at a young age, back when my fascination with the sky was
                     almost as boundless as my curiosity. As a kid, I was utterly captivated by anything that could
@@ -151,20 +161,21 @@
             </article>
         </main>
 
-        <hr class="text-gray-600 my-4" aria-hidden="true" />
+        <hr class="text-gray-300 dark:text-gray-600 my-4" aria-hidden="true" />
 
         <footer class="w-full grid grid-cols-2 gap-4 text-gray-400 pb-8">
-            <a class="hover:text-white transition-colors" href="about.html">About</a>
-            <a class="hover:text-white transition-colors" href="work.html">Work</a>
-            <a class="hover:text-white transition-colors" href="thoughts.html">Thoughts</a>
-            <a class="hover:text-white transition-colors" href="cats.html">Cats</a>
-            <a class="hover:text-white transition-colors" href="mailto:rijfaskp@gmail.com">Contact</a>
+            <a class="hover:dark:text-white hover:text-slate-600 transition-colors" href="about.html">About</a>
+            <a class="hover:dark:text-white hover:text-slate-600 transition-colors" href="work.html">Work</a>
+            <a class="hover:dark:text-white hover:text-slate-600 transition-colors" href="thoughts.html">Thoughts</a>
+            <a class="hover:dark:text-white hover:text-slate-600 transition-colors" href="cats.html">Cats</a>
+            <a class="hover:dark:text-white hover:text-slate-600 transition-colors"
+                href="mailto:rijfaskp@gmail.com">Contact</a>
         </footer>
         <div class="flex gap-1 mb-4">
-            <div class="size-3 bg-white rounded-full flex flex-col justify-center items-center">
+            <div class="size-3 border bg-white rounded-full flex flex-col justify-center items-center">
                 <div class="eyes size-1.5 bg-black rounded-full"></div>
             </div>
-            <div class="size-3 bg-white rounded-full flex flex-col justify-center items-center">
+            <div class="size-3 border bg-white rounded-full flex flex-col justify-center items-center">
                 <div class="eyes size-1.5 bg-black rounded-full"></div>
             </div>
         </div>
