@@ -1,4 +1,12 @@
 // Function to handle eye movement
+// Function to check if device is mobile
+function isMobile() {
+  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+    navigator.userAgent
+  );
+}
+
+// Function to handle eye movement
 function moveEyes(x, y) {
   const pupils = document.querySelectorAll(".eyes");
   pupils.forEach((pupil) => {
@@ -9,7 +17,7 @@ function moveEyes(x, y) {
     const eyeCenterX = rect.left + rect.width / 2;
     const eyeCenterY = rect.top + rect.height / 2;
 
-    // Calculate angle towards pointer position
+    // Calculate angle towards position
     const angle = Math.atan2(y - eyeCenterY, x - eyeCenterX);
 
     // Calculate pupil's new position
@@ -22,18 +30,23 @@ function moveEyes(x, y) {
   });
 }
 
+// Function to move eyes randomly
+function moveEyesRandomly() {
+  const x = Math.random() * window.innerWidth;
+  const y = Math.random() * window.innerHeight;
+  moveEyes(x, y);
+}
+
 // Function to setup eyelids
 function setupEyelids() {
   const eyes = document.querySelectorAll(".eyes");
   eyes.forEach((eye) => {
     const parent = eye.parentElement;
 
-    // Create eyelid if it doesn't exist
     if (!parent.querySelector(".eyelid")) {
       const eyelid = document.createElement("div");
       eyelid.className = "eyelid";
 
-      // Style the eyelid
       eyelid.style.position = "absolute";
       eyelid.style.top = "-100%";
       eyelid.style.left = "0";
@@ -42,11 +55,9 @@ function setupEyelids() {
       eyelid.style.backgroundColor = "black";
       eyelid.style.transition = "top 0.15s ease-in-out";
 
-      // Make sure the eye parent is positioned
       parent.style.position = "relative";
       parent.style.overflow = "hidden";
 
-      // Insert eyelid as the last child
       parent.appendChild(eyelid);
     }
   });
@@ -56,94 +67,74 @@ function setupEyelids() {
 function blink() {
   const eyelids = document.querySelectorAll(".eyelid");
 
-  // Close eyes (slide down)
   eyelids.forEach((eyelid) => {
     eyelid.style.top = "0";
   });
 
-  // Open eyes after a short delay (slide up)
   setTimeout(() => {
     eyelids.forEach((eyelid) => {
       eyelid.style.top = "-100%";
     });
-  }, 200); // Blink duration
+  }, 200);
 }
 
 // Function to trigger random blinks
 function startRandomBlinking() {
   function getRandomInterval() {
-    // Random interval between 2 and 6 seconds
     return Math.random() * (6000 - 2000) + 2000;
   }
 
   function scheduleNextBlink() {
     setTimeout(() => {
       blink();
-      scheduleNextBlink(); // Schedule the next blink
+      scheduleNextBlink();
     }, getRandomInterval());
   }
 
-  scheduleNextBlink(); // Start the cycle
+  scheduleNextBlink();
 }
 
-// Function to check if touch is on an eye element
-function isTouchingEye(touch) {
-  const element = document.elementFromPoint(touch.clientX, touch.clientY);
-  return (
-    element &&
-    (element.classList.contains("eyes") ||
-      element.contains(document.querySelector(".eyes")))
-  );
+// Setup random movement for mobile
+function startRandomMovement() {
+  function getRandomInterval() {
+    // Random interval between 1 and 3 seconds
+    return Math.random() * (3000 - 1000) + 1000;
+  }
+
+  function scheduleNextMovement() {
+    setTimeout(() => {
+      moveEyesRandomly();
+      scheduleNextMovement();
+    }, getRandomInterval());
+  }
+
+  scheduleNextMovement();
 }
 
 // Keep track of the last known pointer position
 let lastPointerX = window.innerWidth / 2;
 let lastPointerY = window.innerHeight / 2;
 
-// Update last known position on mouse move
-document.addEventListener("mousemove", (event) => {
+// Initialize device-specific behavior
+function initializeEyeBehavior() {
+  if (isMobile()) {
+    // Mobile behavior: random movement
+    startRandomMovement();
+
+    // Remove mouse tracking events if they exist
+    document.removeEventListener("mousemove", handleMouseMove);
+  } else {
+    // Desktop behavior: cursor tracking
+    document.addEventListener("mousemove", handleMouseMove);
+  }
+}
+
+// Mouse move handler
+function handleMouseMove(event) {
   lastPointerX = event.clientX;
   lastPointerY = event.clientY;
   moveEyes(lastPointerX, lastPointerY);
-});
-
-// Touch move event listener
-document.addEventListener(
-  "touchmove",
-  (event) => {
-    const touch = event.touches[0];
-
-    // Only prevent default if touching the eyes
-    if (isTouchingEye(touch)) {
-      event.preventDefault();
-    }
-
-    lastPointerX = touch.clientX;
-    lastPointerY = touch.clientY;
-    moveEyes(lastPointerX, lastPointerY);
-  },
-  { passive: false }
-);
-
-// Touch start event listener
-document.addEventListener("touchstart", (event) => {
-  const touch = event.touches[0];
-  lastPointerX = touch.clientX;
-  lastPointerY = touch.clientY;
-  moveEyes(lastPointerX, lastPointerY);
-});
-
-// Scroll event listener
-let ticking = false;
-document.addEventListener("scroll", () => {
-  if (!ticking) {
-    window.requestAnimationFrame(() => {
-      moveEyes(lastPointerX + window.scrollX, lastPointerY + window.scrollY);
-      ticking = false;
-    });
-    ticking = true;
-  }
-});
+}
 
 // Handle window resize
 window.addEventListener("resize", () => {
@@ -156,6 +147,7 @@ window.addEventListener("resize", () => {
 document.addEventListener("DOMContentLoaded", () => {
   setupEyelids();
   startRandomBlinking();
+  initializeEyeBehavior();
 });
 
 const menuButton = document.getElementById("menuButton");
