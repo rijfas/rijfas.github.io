@@ -22,6 +22,70 @@ function moveEyes(x, y) {
   });
 }
 
+// Function to setup eyelids
+function setupEyelids() {
+  const eyes = document.querySelectorAll(".eyes");
+  eyes.forEach((eye) => {
+    const parent = eye.parentElement;
+
+    // Create eyelid if it doesn't exist
+    if (!parent.querySelector(".eyelid")) {
+      const eyelid = document.createElement("div");
+      eyelid.className = "eyelid";
+
+      // Style the eyelid
+      eyelid.style.position = "absolute";
+      eyelid.style.top = "-100%";
+      eyelid.style.left = "0";
+      eyelid.style.width = "100%";
+      eyelid.style.height = "100%";
+      eyelid.style.backgroundColor = "black";
+      eyelid.style.transition = "top 0.15s ease-in-out";
+
+      // Make sure the eye parent is positioned
+      parent.style.position = "relative";
+      parent.style.overflow = "hidden";
+
+      // Insert eyelid as the last child
+      parent.appendChild(eyelid);
+    }
+  });
+}
+
+// Function to make eyes blink
+function blink() {
+  const eyelids = document.querySelectorAll(".eyelid");
+
+  // Close eyes (slide down)
+  eyelids.forEach((eyelid) => {
+    eyelid.style.top = "0";
+  });
+
+  // Open eyes after a short delay (slide up)
+  setTimeout(() => {
+    eyelids.forEach((eyelid) => {
+      eyelid.style.top = "-100%";
+    });
+  }, 200); // Blink duration
+}
+
+// Function to trigger random blinks
+function startRandomBlinking() {
+  function getRandomInterval() {
+    // Random interval between 2 and 6 seconds
+    return Math.random() * (6000 - 2000) + 2000;
+  }
+
+  function scheduleNextBlink() {
+    setTimeout(() => {
+      blink();
+      scheduleNextBlink(); // Schedule the next blink
+    }, getRandomInterval());
+  }
+
+  scheduleNextBlink(); // Start the cycle
+}
+
 // Function to check if touch is on an eye element
 function isTouchingEye(touch) {
   const element = document.elementFromPoint(touch.clientX, touch.clientY);
@@ -86,6 +150,12 @@ window.addEventListener("resize", () => {
   lastPointerX = window.innerWidth / 2;
   lastPointerY = window.innerHeight / 2;
   moveEyes(lastPointerX, lastPointerY);
+});
+
+// Initialize everything when the page loads
+document.addEventListener("DOMContentLoaded", () => {
+  setupEyelids();
+  startRandomBlinking();
 });
 
 const menuButton = document.getElementById("menuButton");
