@@ -2,230 +2,228 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description"
-        content="Rijfas Usman - Developer, mentor and YouTuber from Calicut, IN. Software Engineer at WilliamsLea specializing in innovative digital solutions and full-stack development.">
-    <meta name="keywords"
-        content="Rijfas Usman, Software Engineer, Full Stack Developer, YouTuber, Calicut, WilliamsLea">
-    <meta name="author" content="Rijfas Usman">
+  <meta name="description"
+    content="Rijfas Usman - Developer, mentor and YouTuber from Calicut, IN. Software Engineer at WilliamsLea specializing in innovative digital solutions and full-stack development.">
+  <meta name="keywords" content="Rijfas Usman, Software Engineer, Full Stack Developer, YouTuber, Calicut, WilliamsLea">
+  <meta name="author" content="Rijfas Usman">
 
-    <meta property="og:title" content="Rijfas Usman - Developer & Mentor">
-    <meta property="og:description"
-        content="Software Engineer at WilliamsLea, YouTuber, and Full Stack Developer from Calicut, IN">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://rijfas.com">
-    <meta property="og:image" content="https://rijfas.com/images/image.png">
+  <meta property="og:title" content="Rijfas Usman - Developer & Mentor">
+  <meta property="og:description"
+    content="Software Engineer at WilliamsLea, YouTuber, and Full Stack Developer from Calicut, IN">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://rijfas.com">
+  <meta property="og:image" content="https://rijfas.com/images/image.png">
 
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Rijfas Usman - Developer & Mentor">
-    <meta name="twitter:description"
-        content="Software Engineer at WilliamsLea, YouTuber, and Full Stack Developer from Calicut, IN">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Rijfas Usman - Developer & Mentor">
+  <meta name="twitter:description"
+    content="Software Engineer at WilliamsLea, YouTuber, and Full Stack Developer from Calicut, IN">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-        rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    rel="stylesheet">
 
-    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
 
-    <style>
-        body {
-            font-family: "Inter", system-ui, -apple-system, sans-serif;
-            font-optical-sizing: auto;
-            background-color: #000000;
-            color: #9ca3af;
-        }
+  <style>
+    body {
+      font-family: "Inter", system-ui, -apple-system, sans-serif;
+      font-optical-sizing: auto;
+      background-color: #000000;
+      color: #9ca3af;
+    }
 
-        .header-container {
-            position: fixed;
-            width: 100%;
-            z-index: 50;
-            transition: background-color 0.3s ease-in-out, backdrop-filter 0.3s ease-in-out;
-        }
+    .header-container {
+      position: fixed;
+      width: 100%;
+      z-index: 50;
+      transition: background-color 0.3s ease-in-out, backdrop-filter 0.3s ease-in-out;
+    }
 
-        .header-container.scrolled {
-            background-color: rgba(0, 0, 0, 0.7);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-        }
+    .header-container.scrolled {
+      background-color: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
 
-        .content-wrapper {
-            transition: filter 0.3s ease-in-out;
-        }
+    .content-wrapper {
+      transition: filter 0.3s ease-in-out;
+    }
 
-        .blur-active .content-wrapper {
-            filter: blur(4px);
-            pointer-events: none;
-        }
+    .blur-active .content-wrapper {
+      filter: blur(4px);
+      pointer-events: none;
+    }
 
-        #dropdownMenu {
-            z-index: 50;
-        }
+    #dropdownMenu {
+      z-index: 50;
+    }
 
-        @media (prefers-reduced-motion: no-preference) {
-            :root {
-                scroll-behavior: smooth;
-            }
-        }
-    </style>
+    @media (prefers-reduced-motion: no-preference) {
+      :root {
+        scroll-behavior: smooth;
+      }
+    }
+  </style>
 
-    <title>rijfas.com / Home</title>
+  <title>rijfas.com / Home</title>
 </head>
 
 <body>
-    <div class="fixed w-full z-50">
-        <div class="header-container">
-            <div class="max-w-xl mx-auto px-4 sm:px-0">
-                <header class="pt-12 pb-6 flex w-full justify-between items-center relative">
-                    <nav aria-label="Breadcrumb" class="text-xs flex items-center gap-2">
-                        <a href="index.html" class="hover:text-white transition-colors" aria-label="Home">rijfas.com</a>
-                        <span aria-hidden="true">/</span>
-                        <span aria-current="page" class="text-white">Home</span>
-                    </nav>
-                    <button id="menuButton" aria-label="Toggle navigation menu" aria-expanded="false"
-                        class="text-2xl hover:text-white cursor-pointer transition-all duration-300 ease-in-out">+</button>
-                    <nav id="dropdownMenu" aria-label="Site navigation"
-                        class="absolute right-0 left-0 top-24 bg-black rounded-lg p-4 opacity-0 transition-all duration-300 ease-in-out hidden border  border-opacity-75">
-                        <ul class="flex flex-col gap-4 text-sm">
-                            <li><a href="about.html" class=" hover:text-white transition-colors">About</a></li>
-                            <li><a href="work.html" class=" hover:text-white transition-colors">Work</a></li>
-                            <li><a href="thoughts.html" class=" hover:text-white transition-colors">Thoughts</a>
-                            </li>
-                            <li><a href="cats.html" class=" hover:text-white transition-colors">Cats</a></li>
-                            <li><a href="mailto:rijfaskp@gmail.com"
-                                    class=" hover:text-white transition-colors">Contact</a>
-                            </li>
-                        </ul>
-                    </nav>
-                </header>
-            </div>
-        </div>
+  <div class="fixed w-full z-50">
+    <div class="header-container">
+      <div class="max-w-xl mx-auto px-4 sm:px-0">
+        <header class="pt-12 pb-6 flex w-full justify-between items-center relative">
+          <nav aria-label="Breadcrumb" class="text-xs flex items-center gap-2">
+            <a href="index.html" class="hover:text-white transition-colors" aria-label="Home">rijfas.com</a>
+            <span aria-hidden="true">/</span>
+            <span aria-current="page" class="text-white">Home</span>
+          </nav>
+          <button id="menuButton" aria-label="Toggle navigation menu" aria-expanded="false"
+            class="text-2xl hover:text-white cursor-pointer transition-all duration-300 ease-in-out">+</button>
+          <nav id="dropdownMenu" aria-label="Site navigation"
+            class="absolute right-0 left-0 top-24 bg-black rounded-lg p-4 opacity-0 transition-all duration-300 ease-in-out hidden border  border-opacity-75">
+            <ul class="flex flex-col gap-4 text-sm">
+              <li><a href="about.html" class=" hover:text-white transition-colors">About</a></li>
+              <li><a href="work.html" class=" hover:text-white transition-colors">Work</a></li>
+              <li><a href="thoughts.html" class=" hover:text-white transition-colors">Thoughts</a>
+              </li>
+              <li><a href="cats.html" class=" hover:text-white transition-colors">Cats</a></li>
+              <li><a href="mailto:rijfaskp@gmail.com" class=" hover:text-white transition-colors">Contact</a>
+              </li>
+            </ul>
+          </nav>
+        </header>
+      </div>
     </div>
+  </div>
 
-    <div class="content-wrapper max-w-xl mx-auto flex flex-col gap-4 px-4 sm:px-0 pt-32">
-        <img src="./images/image.png" alt="Featured photograph of an old computer" width="800" height="384"
-            class="max-h-96 w-full object-cover rounded-lg" loading="lazy">
+  <div class="content-wrapper max-w-xl mx-auto flex flex-col gap-4 px-4 sm:px-0 pt-32">
+    <img src="./images/image.png" alt="Featured photograph of an old computer" width="800" height="384"
+      class="max-h-96 w-full object-cover rounded-lg" loading="lazy">
 
-        <main>
-            <article>
-                <h1 class="text-md mt-4">Rijfas Usman</h1>
-                <p class="mt-4 text-gray-400 leading-relaxed">
-                    I'm a developer, mentor and part time <a href="https://www.youtube.com/@codeSchoolMalayalam"
-                        class="text-white hover:underline" target="_blank" rel="noopener noreferrer">YouTuber</a> living
-                    in Calicut, IN.
-                    Currently working as a Software Engineer at <a href="https://www.williamslea.com/"
-                        class="text-white hover:underline" target="_blank" rel="noopener noreferrer">WilliamsLea</a>,
-                    where I contribute to
-                    innovative digital solutions. Before that, I worked as a Full-Stack Developer at <a
-                        href="https://www.yestack.io/" class="text-white hover:underline" target="_blank"
-                        rel="noopener noreferrer">Yestack</a>,
-                    where I was involved in creating and maintaining a variety of web applications. Alongside my main
-                    roles, I
-                    also enjoy collaborating with early-stage startups, friends, and diving into personal projects. This
-                    site
-                    showcases a mix of both personal and professional work—some still in the works, but all driven by
-                    curiosity, persistence, and a bit of scrappiness. Feel free to explore the links below if you're
-                    curious
-                    about what I'm up to.
-                </p>
-            </article>
-        </main>
+    <main>
+      <article>
+        <h1 class="text-lg text-white mt-4">Rijfas Usman</h1>
+        <p class="mt-4 text-gray-400 leading-relaxed">
+          I'm a developer, mentor and part time <a href="https://www.youtube.com/@codeSchoolMalayalam"
+            class="text-white hover:underline" target="_blank" rel="noopener noreferrer">YouTuber</a> living
+          in Calicut, IN.
+          Currently working as a Software Engineer at <a href="https://www.williamslea.com/"
+            class="text-white hover:underline" target="_blank" rel="noopener noreferrer">WilliamsLea</a>,
+          where I contribute to
+          innovative digital solutions. Before that, I worked as a Full-Stack Developer at <a
+            href="https://www.yestack.io/" class="text-white hover:underline" target="_blank"
+            rel="noopener noreferrer">Yestack</a>,
+          where I was involved in creating and maintaining a variety of web applications. Alongside my main
+          roles, I
+          also enjoy collaborating with early-stage startups, friends, and diving into personal projects. This
+          site
+          showcases a mix of both personal and professional work—some still in the works, but all driven by
+          curiosity, persistence, and a bit of scrappiness. Feel free to explore the links below if you're
+          curious
+          about what I'm up to.
+        </p>
+      </article>
+    </main>
 
-        <hr class="text-gray-600 my-4" aria-hidden="true" />
+    <hr class="text-gray-600 my-4" aria-hidden="true" />
 
-        <footer class="w-full grid grid-cols-2 gap-4 text-gray-400 pb-8">
-            <a class="hover:text-white transition-colors" href="about.html">About</a>
-            <a class="hover:text-white transition-colors" href="work.html">Work</a>
-            <a class="hover:text-white transition-colors" href="thoughts.html">Thoughts</a>
-            <a class="hover:text-white transition-colors" href="cats.html">Cats</a>
-            <a class="hover:text-white transition-colors" href="mailto:rijfaskp@gmail.com">Contact</a>
-        </footer>
-        <div class="flex gap-1">
-            <div class="size-3 bg-white rounded-full flex flex-col justify-center items-center">
-                <div class="eyes size-1.5 bg-black rounded-full"></div>
-            </div>
-            <div class="size-3 bg-white rounded-full flex flex-col justify-center items-center">
-                <div class="eyes size-1.5 bg-black rounded-full"></div>
-            </div>
-        </div>
+    <footer class="w-full grid grid-cols-2 gap-4 text-gray-400 pb-8">
+      <a class="hover:text-white transition-colors" href="about.html">About</a>
+      <a class="hover:text-white transition-colors" href="work.html">Work</a>
+      <a class="hover:text-white transition-colors" href="thoughts.html">Thoughts</a>
+      <a class="hover:text-white transition-colors" href="cats.html">Cats</a>
+      <a class="hover:text-white transition-colors" href="mailto:rijfaskp@gmail.com">Contact</a>
+    </footer>
+    <div class="flex gap-1">
+      <div class="size-3 bg-white rounded-full flex flex-col justify-center items-center">
+        <div class="eyes size-1.5 bg-black rounded-full"></div>
+      </div>
+      <div class="size-3 bg-white rounded-full flex flex-col justify-center items-center">
+        <div class="eyes size-1.5 bg-black rounded-full"></div>
+      </div>
     </div>
+  </div>
 
-    <script>
-        document.addEventListener('mousemove', (event) => {
-            const pupils = document.querySelectorAll('.eyes');
+  <script>
+    document.addEventListener('mousemove', (event) => {
+      const pupils = document.querySelectorAll('.eyes');
 
-            pupils.forEach(pupil => {
-                const eye = pupil.parentElement; // Get the parent eye element
-                const rect = eye.getBoundingClientRect(); // Get bounding box of the eye
+      pupils.forEach(pupil => {
+        const eye = pupil.parentElement; // Get the parent eye element
+        const rect = eye.getBoundingClientRect(); // Get bounding box of the eye
 
-                // Calculate center position of the eye
-                const eyeCenterX = rect.left + rect.width / 2;
-                const eyeCenterY = rect.top + rect.height / 2;
+        // Calculate center position of the eye
+        const eyeCenterX = rect.left + rect.width / 2;
+        const eyeCenterY = rect.top + rect.height / 2;
 
-                // Calculate angle towards mouse position
-                const angle = Math.atan2(event.clientY - eyeCenterY, event.clientX - eyeCenterX);
+        // Calculate angle towards mouse position
+        const angle = Math.atan2(event.clientY - eyeCenterY, event.clientX - eyeCenterX);
 
-                // Calculate pupil's new position
-                const pupilRadius = (rect.width / 2) * 0.8; // Set how far the pupil can move
-                const pupilX = Math.cos(angle) * pupilRadius;
-                const pupilY = Math.sin(angle) * pupilRadius;
+        // Calculate pupil's new position
+        const pupilRadius = (rect.width / 2) * 0.8; // Set how far the pupil can move
+        const pupilX = Math.cos(angle) * pupilRadius;
+        const pupilY = Math.sin(angle) * pupilRadius;
 
-                // Move the pupil
-                pupil.style.transform = `translate(${pupilX}px, ${pupilY}px)`;
-            });
+        // Move the pupil
+        pupil.style.transform = `translate(${pupilX}px, ${pupilY}px)`;
+      });
+    });
+    const menuButton = document.getElementById("menuButton");
+    const dropdownMenu = document.getElementById("dropdownMenu");
+    var isOpen = false;
+
+    const toggleMenu = (open) => {
+      isOpen = open;
+      menuButton.setAttribute("aria-expanded", open);
+
+      if (open) {
+        dropdownMenu.classList.remove("hidden");
+        document.body.classList.add("blur-active");
+        requestAnimationFrame(() => {
+          dropdownMenu.classList.remove("opacity-0");
         });
-        const menuButton = document.getElementById("menuButton");
-        const dropdownMenu = document.getElementById("dropdownMenu");
-        var isOpen = false;
+        menuButton.style.transform = "rotate(45deg)";
+      } else {
+        dropdownMenu.classList.add("opacity-0");
+        document.body.classList.remove("blur-active");
+        menuButton.style.transform = "rotate(0deg)";
+        setTimeout(() => {
+          dropdownMenu.classList.add("hidden");
+        }, 300);
+      }
+    };
 
-        const toggleMenu = (open) => {
-            isOpen = open;
-            menuButton.setAttribute("aria-expanded", open);
+    menuButton.addEventListener("click", (e) => {
+      e.stopPropagation();
+      toggleMenu(!isOpen);
+    });
 
-            if (open) {
-                dropdownMenu.classList.remove("hidden");
-                document.body.classList.add("blur-active");
-                requestAnimationFrame(() => {
-                    dropdownMenu.classList.remove("opacity-0");
-                });
-                menuButton.style.transform = "rotate(45deg)";
-            } else {
-                dropdownMenu.classList.add("opacity-0");
-                document.body.classList.remove("blur-active");
-                menuButton.style.transform = "rotate(0deg)";
-                setTimeout(() => {
-                    dropdownMenu.classList.add("hidden");
-                }, 300);
-            }
-        };
+    document.addEventListener("click", (event) => {
+      if (
+        !menuButton.contains(event.target) &&
+        !dropdownMenu.contains(event.target) &&
+        isOpen
+      ) {
+        toggleMenu(false);
+      }
+    });
+    const header = document.querySelector('.header-container');
 
-        menuButton.addEventListener("click", (e) => {
-            e.stopPropagation();
-            toggleMenu(!isOpen);
-        });
-
-        document.addEventListener("click", (event) => {
-            if (
-                !menuButton.contains(event.target) &&
-                !dropdownMenu.contains(event.target) &&
-                isOpen
-            ) {
-                toggleMenu(false);
-            }
-        });
-        const header = document.querySelector('.header-container');
-
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 10) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-    </script>
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 10) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+  </script>
 </body>
 
 </html>
