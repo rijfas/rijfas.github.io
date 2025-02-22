@@ -217,28 +217,48 @@
     </div>
 
     <script>
-        document.addEventListener('mousemove', (event) => {
+        function moveEyes(x, y) {
             const pupils = document.querySelectorAll('.eyes');
-
             pupils.forEach(pupil => {
-                const eye = pupil.parentElement; // Get the parent eye element
-                const rect = eye.getBoundingClientRect(); // Get bounding box of the eye
+                const eye = pupil.parentElement;
+                const rect = eye.getBoundingClientRect();
 
                 // Calculate center position of the eye
                 const eyeCenterX = rect.left + rect.width / 2;
                 const eyeCenterY = rect.top + rect.height / 2;
 
-                // Calculate angle towards mouse position
-                const angle = Math.atan2(event.clientY - eyeCenterY, event.clientX - eyeCenterX);
+                // Calculate angle towards pointer position
+                const angle = Math.atan2(y - eyeCenterY, x - eyeCenterX);
 
                 // Calculate pupil's new position
-                const pupilRadius = (rect.width / 2) * 0.8; // Set how far the pupil can move
+                const pupilRadius = (rect.width / 2) * 0.8;
                 const pupilX = Math.cos(angle) * pupilRadius;
                 const pupilY = Math.sin(angle) * pupilRadius;
 
                 // Move the pupil
                 pupil.style.transform = `translate(${pupilX}px, ${pupilY}px)`;
             });
+        }
+
+        // Mouse move event listener
+        document.addEventListener('mousemove', (event) => {
+            moveEyes(event.clientX, event.clientY);
+        });
+
+        // Touch move event listener
+        document.addEventListener('touchmove', (event) => {
+            // Prevent default to stop scrolling while touching the eyes
+            event.preventDefault();
+
+            // Use the first touch point
+            const touch = event.touches[0];
+            moveEyes(touch.clientX, touch.clientY);
+        }, { passive: false });
+
+        // Touch start event listener
+        document.addEventListener('touchstart', (event) => {
+            const touch = event.touches[0];
+            moveEyes(touch.clientX, touch.clientY);
         });
         const menuButton = document.getElementById("menuButton");
         const dropdownMenu = document.getElementById("dropdownMenu");
