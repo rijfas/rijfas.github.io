@@ -31,46 +31,8 @@
 
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
 
-    <style>
-        body {
-            font-family: "Inter", system-ui, -apple-system, sans-serif;
-            font-optical-sizing: auto;
-            background-color: #000000;
-            color: #9ca3af;
-        }
+    <link rel="stylesheet" href="css/style.css">
 
-        .header-container {
-            position: fixed;
-            width: 100%;
-            z-index: 50;
-            transition: background-color 0.3s ease-in-out, backdrop-filter 0.3s ease-in-out;
-        }
-
-        .header-container.scrolled {
-            background-color: rgba(0, 0, 0, 0.7);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-        }
-
-        .content-wrapper {
-            transition: filter 0.3s ease-in-out;
-        }
-
-        .blur-active .content-wrapper {
-            filter: blur(4px);
-            pointer-events: none;
-        }
-
-        #dropdownMenu {
-            z-index: 50;
-        }
-
-        @media (prefers-reduced-motion: no-preference) {
-            :root {
-                scroll-behavior: smooth;
-            }
-        }
-    </style>
 
     <title>rijfas.com / About</title>
 </head>
@@ -208,79 +170,8 @@
         </div>
     </div>
 
-    <script>
-        document.addEventListener('mousemove', (event) => {
-            const pupils = document.querySelectorAll('.eyes');
+    <script src="js/script.js"> </script>
 
-            pupils.forEach(pupil => {
-                const eye = pupil.parentElement; // Get the parent eye element
-                const rect = eye.getBoundingClientRect(); // Get bounding box of the eye
-
-                // Calculate center position of the eye
-                const eyeCenterX = rect.left + rect.width / 2;
-                const eyeCenterY = rect.top + rect.height / 2;
-
-                // Calculate angle towards mouse position
-                const angle = Math.atan2(event.clientY - eyeCenterY, event.clientX - eyeCenterX);
-
-                // Calculate pupil's new position
-                const pupilRadius = (rect.width / 2) * 0.8; // Set how far the pupil can move
-                const pupilX = Math.cos(angle) * pupilRadius;
-                const pupilY = Math.sin(angle) * pupilRadius;
-
-                // Move the pupil
-                pupil.style.transform = `translate(${pupilX}px, ${pupilY}px)`;
-            });
-        });
-        const menuButton = document.getElementById("menuButton");
-        const dropdownMenu = document.getElementById("dropdownMenu");
-        var isOpen = false;
-
-        const toggleMenu = (open) => {
-            isOpen = open;
-            menuButton.setAttribute("aria-expanded", open);
-
-            if (open) {
-                dropdownMenu.classList.remove("hidden");
-                document.body.classList.add("blur-active");
-                requestAnimationFrame(() => {
-                    dropdownMenu.classList.remove("opacity-0");
-                });
-                menuButton.style.transform = "rotate(45deg)";
-            } else {
-                dropdownMenu.classList.add("opacity-0");
-                document.body.classList.remove("blur-active");
-                menuButton.style.transform = "rotate(0deg)";
-                setTimeout(() => {
-                    dropdownMenu.classList.add("hidden");
-                }, 300);
-            }
-        };
-
-        menuButton.addEventListener("click", (e) => {
-            e.stopPropagation();
-            toggleMenu(!isOpen);
-        });
-
-        document.addEventListener("click", (event) => {
-            if (
-                !menuButton.contains(event.target) &&
-                !dropdownMenu.contains(event.target) &&
-                isOpen
-            ) {
-                toggleMenu(false);
-            }
-        });
-        const header = document.querySelector('.header-container');
-
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 10) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-    </script>
 </body>
 
 </html>

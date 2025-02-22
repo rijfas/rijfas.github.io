@@ -1,0 +1,126 @@
+body {
+    font-family: "Inter", system-ui, -apple-system, sans-serif;
+    font-optical-sizing: auto;
+    background-color: #000000;
+    color: #9ca3af;
+}
+
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-auto-rows: 80px;
+    gap: 1rem;
+}
+
+.gallery-item {
+    border-radius: 0.5rem;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.2s ease-in-out;
+}
+
+.gallery-item:hover {
+    transform: scale(1.02);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Grid item sizes */
+.grid-item-1 {
+    grid-column: span 7;
+    grid-row: span 3;
+}
+
+.grid-item-2 {
+    grid-column: span 5;
+    grid-row: span 2;
+}
+
+.grid-item-3 {
+    grid-column: span 5;
+    grid-row: span 3;
+}
+
+.grid-item-4 {
+    grid-column: span 7;
+    grid-row: span 2;
+}
+
+.grid-item-5 {
+    grid-column: span 6;
+    grid-row: span 2;
+}
+
+.grid-item-6 {
+    grid-column: span 6;
+    grid-row: span 2;
+}
+
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(6, 1fr);
+        grid-auto-rows: 60px;
+    }
+
+    .grid-item-1 {
+        grid-column: span 6;
+        grid-row: span 3;
+    }
+
+    .grid-item-2,
+    .grid-item-3 {
+        grid-column: span 3;
+        grid-row: span 2;
+    }
+
+    .grid-item-4,
+    .grid-item-5,
+    .grid-item-6 {
+        grid-column: span 6;
+        grid-row: span 2;
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    :root {
+        scroll-behavior: smooth;
+    }
+}
+
+
+.header-container {
+    position: fixed;
+    width: 100%;
+    z-index: 50;
+    transition: background-color 0.3s ease-in-out, backdrop-filter 0.3s ease-in-out;
+}
+
+.header-container.scrolled {
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.content-wrapper {
+    transition: filter 0.3s ease-in-out;
+}
+
+.blur-active .content-wrapper {
+    filter: blur(4px);
+    pointer-events: none;
+}
+
+#dropdownMenu {
+    z-index: 50;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    :root {
+        scroll-behavior: smooth;
+    }
+}
