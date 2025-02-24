@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords"
+        content="Rijfas Usman, Software Engineer, Full Stack Developer, YouTuber, Calicut, WilliamsLea">
+    <meta name="author" content="Rijfas Usman">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <meta property="og:title" content="Rijfas Usman - Developer & Mentor">
+    <meta property="og:description"
+        content="Software Engineer at WilliamsLea, YouTuber, and Full Stack Developer from Calicut, IN">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://rijfas.github.io/projects.html">
+    <meta property="og:image" content="https://rijfas.github.io/images/preview.webp">
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Rijfas Usman - Developer & Mentor">
+    <meta name="twitter:description"
+        content="Software Engineer at WilliamsLea, YouTuber, and Full Stack Developer from Calicut, IN">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.min.css">
+
+    <title>rijfas.github.io / Projects</title>
+</head>
+
+<body class="dark:bg-black">
+    <div class="fixed w-full z-50">
+        <div class="header-container">
+            <div class="max-w-xl mx-auto px-4 sm:px-0">
+                <header class="pt-12 pb-6 flex w-full justify-between items-center relative">
+                    <nav aria-label="Breadcrumb" class="text-xs flex items-center gap-2">
+                        <a href="index.html" class="hover:dark:text-white hover:text-slate-600 transition-colors"
+                            aria-label="Home">rijfas.github.io</a>
+                        <span aria-hidden="true">/</span>
+                        <span aria-current="page" class="text-slate-500 dark:text-white">Projects</span>
+                    </nav>
+                    <button id="menuButton" aria-label="Toggle navigation menu" aria-expanded="false"
+                        class="text-2xl hover:dark:text-white hover:text-slate-600 cursor-pointer transition-all duration-300 ease-in-out">+</button>
+                    <nav id="dropdownMenu" aria-label="Site navigation"
+                        class="absolute right-0 left-0 top-24 bg-white dark:bg-black rounded-lg p-4 opacity-0 transition-all duration-300 ease-in-out hidden border  border-opacity-75">
+                        <ul class="flex flex-col gap-4 text-sm">
+                            <li><a href="about.html"
+                                    class=" hover:dark:text-white hover:text-slate-600 transition-colors">About</a>
+                            </li>
+                            <li><a href="career.html"
+                                    class=" hover:dark:text-white hover:text-slate-600 transition-colors">Career</a>
+                            </li>
+                            <li><a href="projects.html"
+                                    class=" hover:dark:text-white hover:text-slate-600 transition-colors">Projects</a>
+                            </li>
+                            <li><a href="thoughts.html"
+                                    class=" hover:dark:text-white hover:text-slate-600 transition-colors">Thoughts</a>
+                            </li>
+                            <li><a href="cats.html"
+                                    class=" hover:dark:text-white hover:text-slate-600 transition-colors">Cats</a>
+                            </li>
+                            <li><a href="contact.html"
+                                    class=" hover:dark:text-white hover:text-slate-600 transition-colors">Contact</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </header>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-wrapper max-w-xl mx-auto flex flex-col gap-4 px-4 sm:px-0 pt-32">
+        <main>
+            <article>
+                <h1 class="text-lg text-slate-500 dark:text-white mb-4">Projects</h1>
+                <p class="mt-4 text-sm text-gray-400 leading-relaxed">
+                    Check out some of my GitHub repos—old, cringy ones included. I've got plenty of private and
+                    outsourced projects that aren't public.(PS, too lazy to update this list)
+                </p>
+                <div id="repos" class="mt-4 flex flex-col gap-4">
+                    <div class="repo p-4 border border-gray-300 dark:border-gray-600 rounded-lg">
+                        <img src="images/project_1.png" alt="PDF Splitter"
+                            class="w-full h-48 object-cover rounded-lg mb-4">
+                        <h2 class="text-lg text-slate-500 dark:text-white">
+                            PDF Splitter</h2>
+                        <p class="text-sm text-gray-400">Stack: Python, Tkinter</p>
+                        <p class="text-sm text-gray-400">Description: A modern, user-friendly tool to split your large
+                            PDF files.
+                        </p>
+                        <a href="https://github.com/rijfas/pdf-splitter"
+                            class="text-gray-400 hover:text-gray-500 hover:dark:text-white" target="_blank">View on
+                            GitHub</a>
+                    </div>
+                    <div class="repo p-4 border border-gray-300 dark:border-gray-600 rounded-lg">
+                        <img src="images/project_2.png" alt="Flat 3d Button"
+                            class="w-full h-48 object-cover rounded-lg mb-4">
+                        <h2 class="text-lg text-slate-500 dark:text-white">
+                            Flat 3d Button</h2>
+                        <p class="text-sm text-gray-400">Stack: Flutter, Dart</p>
+                        <p class="text-sm text-gray-400">Description: A simple 3D flat button package with click
+                            animation!
+                        </p>
+                        <a href="https://github.com/rijfas/flat_3d_button"
+                            class="text-gray-400 hover:text-gray-500 hover:dark:text-white" target="_blank">View on
+                            GitHub</a>
+                    </div>
+                    <div class="repo p-4 border border-gray-300 dark:border-gray-600 rounded-lg">
+                        <img src="images/project_3.png" alt="Telephony Fix"
+                            class="w-full h-48 object-cover rounded-lg mb-4">
+                        <h2 class="text-lg text-slate-500 dark:text-white">
+                            Telephony Fix</h2>
+                        <p class="text-sm text-gray-400">Stack: Flutter, Dart</p>
+                        <p class="text-sm text-gray-400">Description: Fixed version of famous telephony plugin by
+                            shounakmulay.dev.
+                        </p>
+                        <a href="https://github.com/rijfas/Telephony"
+                            class="text-gray-400 hover:text-gray-500 hover:dark:text-white" target="_blank">View on
+                            GitHub</a>
+                    </div>
+                    <div class="repo p-4 border border-gray-300 dark:border-gray-600 rounded-lg">
+                        <img src="images/project_4.png" alt="My Little Diary"
+                            class="w-full h-48 object-cover rounded-lg mb-4">
+                        <h2 class="text-lg text-slate-500 dark:text-white">
+                            My Little Diary</h2>
+                        <p class="text-sm text-gray-400">Stack: Flutter, Dart</p>
+                        <p class="text-sm text-gray-400">Description: An Open-Source simple Diary App!
+                        </p>
+                        <a href="https://github.com/rijfas/my_little_diary"
+                            class="text-gray-400 hover:text-gray-500 hover:dark:text-white" target="_blank">View on
+                            GitHub</a>
+                    </div>
+                    <div class="repo p-4 border border-gray-300 dark:border-gray-600 rounded-lg">
+                        <img src="images/project_5.png" alt="Tremor" class="w-full h-48 object-cover rounded-lg mb-4">
+                        <h2 class="text-lg text-slate-500 dark:text-white">
+                            Tremor</h2>
+                        <p class="text-sm text-gray-400">Stack: React, TypeScript</p>
+                        <p class="text-sm text-gray-400">Description: Contributed to tremor, The react library to build
+                            dashboards fast
+                        </p>
+                        <a href="https://github.com/rijfas/my_little_diary"
+                            class="text-gray-400 hover:text-gray-500 hover:dark:text-white" target="_blank">View on
+                            GitHub</a>
+                    </div>
+                    <div class="repo p-4 border border-gray-300 dark:border-gray-600 rounded-lg">
+                        <img src="images/project_6.png" alt="Mailed.It"
+                            class="w-full h-48 object-cover rounded-lg mb-4">
+                        <h2 class="text-lg text-slate-500 dark:text-white">
+                            Mailed.It</h2>
+                        <p class="text-sm text-gray-400">Stack: Python, Tkinter</p>
+                        <p class="text-sm text-gray-400">Description: Mass Mailing Application built using Tkinter,
+                            allowing you to send personalized emails to recipients using an HTML template and data from
+                            an Excel file.
+
+                        </p>
+                        <a href="https://github.com/rijfas/mailed_it"
+                            class="text-gray-400 hover:text-gray-500 hover:dark:text-white" target="_blank">View on
+                            GitHub</a>
+                    </div>
+                    <div class="repo p-4 border border-gray-300 dark:border-gray-600 rounded-lg">
+                        <img src="images/project_7.png" alt="NPTEL Mock Test"
+                            class="w-full h-48 object-cover rounded-lg mb-4">
+                        <h2 class="text-lg text-slate-500 dark:text-white">
+                            NPTEL Mock Test</h2>
+                        <p class="text-sm text-gray-400">Stack: HTML, tailwindcss, Vanila JS</p>
+                        <p class="text-sm text-gray-400">Description: Mock test using assignment questions for NPTEL
+                            exam preparation. .
+
+                        </p>
+                        <a href="https://github.com/rijfas/nptel_mock_test"
+                            class="text-gray-400 hover:text-gray-500 hover:dark:text-white" target="_blank">View on
+                            GitHub</a>
+                    </div>
+
+
+                </div>
+            </article>
+        </main>
+
+        <hr class="text-gray-300 dark:text-gray-600 my-4" aria-hidden="true" />
+
+        <footer class="w-full grid grid-cols-2 gap-4 text-gray-400 pb-8 text-sm">
+            <a class="hover:dark:text-white hover:text-slate-600 transition-colors" href="about.html">About</a>
+            <a class="hover:dark:text-white hover:text-slate-600 transition-colors" href="career.html">Career</a>
+            <a class="hover:dark:text-white hover:text-slate-600 transition-colors" href="projects.html">Projects</a>
+            <a class="hover:dark:text-white hover:text-slate-600 transition-colors" href="thoughts.html">Thoughts</a>
+            <a class="hover:dark:text-white hover:text-slate-600 transition-colors" href="cats.html">Cats</a>
+            <a class="hover:dark:text-white hover:text-slate-600 transition-colors" href="contact.html">Contact</a>
+        </footer>
+        <div class="flex gap-1 mb-4">
+            <div class="size-3 border bg-white rounded-full flex flex-col justify-center items-center">
+                <div class="eyes size-1.5 bg-black rounded-full"></div>
+            </div>
+            <div class="size-3 border bg-white rounded-full flex flex-col justify-center items-center">
+                <div class="eyes size-1.5 bg-black rounded-full"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

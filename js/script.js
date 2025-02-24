@@ -194,7 +194,9 @@ const header = document.querySelector(".header-container");
 window.addEventListener("scroll", () => {
   if (window.scrollY > 10) {
     header.classList.add("scrolled");
+    header.classList.add("backdrop-blur-sm");
   } else {
     header.classList.remove("scrolled");
+    header.classList.remove("backdrop-blur-sm");
   }
 });
