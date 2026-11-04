@@ -76,7 +76,14 @@ trap 'die "Failed at line $LINENO (command: $BASH_COMMAND)"' ERR
 
 [ "$(id -u)" -eq 0 ] || die "Run as root (sudo ./deploy.sh ...)"
 
-usage() { banner; sed -n '2,32p' "$SELF"; }
+IS_WSL=0
+grep -qiE 'microsoft|wsl' /proc/version 2>/dev/null && IS_WSL=1
+
+require_systemd() {
+  [ -d /run/systemd/system ] && return 0
+  die "systemd is not running. On WSL, add these two lines to /etc/wsl.conf:  [boot] / systemd=true  then run 'wsl --shutdown' from Windows and reopen Ubuntu."
+}
+
 
 banner() {
   cat <<'BANNER'
@@ -87,11 +94,46 @@ banner() {
 | |  | || |___  / ___ \ |  __/ 
 |_|  |_| \____|/_/   \_\|_|    
 
-Directorate of Technical Education
-Govt of Keralam
-
 BANNER
   printf '  Production deploy  |  host: %s  |  %s\n\n' "$(hostname)" "$(date '+%F %T')"
+}
+
+usage() {
+  banner
+  cat <<USAGE
+Usage: sudo $0 <command> [args]
+
+Setup & updates
+  deploy                 First-time install (asks for GitHub token, .env values, HTTPS email)
+  update                 Backup, pull latest code, migrate, restart (auto-rollback of code if unhealthy)
+
+Operations
+  status                 Show service status (app, nginx, postgresql, backup timer)
+  health                 Quick health check of the app
+  restart                Restart the app and reload nginx
+  logs [name]            Tail logs: app (default) | access | nginx | deploy | systemd | all
+  manage <args...>       Run manage.py as the app user (e.g. manage shell, manage createsuperuser)
+
+Backups
+  backup                 Backup database + public media + private media
+  restore [timestamp]    Restore a backup (no timestamp = list available backups)
+
+Common environment variables
+  SERVER_NAME=$SERVER_NAME
+  LETSENCRYPT_EMAIL=you@example.com   Enable HTTPS (Let's Encrypt)
+  REPO_URL, BRANCH=$BRANCH, APP_DIR=$APP_DIR, APP_USER=$APP_USER
+  WORKERS=$WORKERS, PY_VERSION=$PY_VERSION, SETUP_FIREWALL=$SETUP_FIREWALL
+  BACKUP_DIR=$BACKUP_DIR, KEEP_BACKUPS=$KEEP_BACKUPS, BACKUP_REMOTE=<user@host:/path>
+
+Examples
+  sudo ./deploy.sh deploy
+  sudo LETSENCRYPT_EMAIL=ops@example.com ./deploy.sh deploy
+  sudo ./deploy.sh update
+  sudo ./deploy.sh logs access
+  sudo ./deploy.sh restore 20261104_021500
+
+Logs: $LOG_DIR/   Backups: $BACKUP_DIR/
+USAGE
 }
 
 
@@ -234,11 +276,18 @@ install_packages() {
   log "Installing system packages..."
   export DEBIAN_FRONTEND=noninteractive
   apt-get update
+  # gdk-pixbuf was renamed (libgdk-pixbuf2.0-0 -> libgdk-pixbuf-2.0-0) in newer Debian/Ubuntu
+  local pixbuf_pkg
+  if apt-cache show libgdk-pixbuf-2.0-0 >/dev/null 2>&1; then
+    pixbuf_pkg="libgdk-pixbuf-2.0-0"
+  else
+    pixbuf_pkg="libgdk-pixbuf2.0-0"
+  fi
   apt-get install -y --no-install-recommends \
     build-essential libpq-dev libffi-dev \
     postgresql postgresql-client \
     nginx git curl rsync openssh-client ca-certificates logrotate \
-    libpango-1.0-0 libpangocairo-1.0-0 libcairo2 libgdk-pixbuf2.0-0 \
+    libpango-1.0-0 libpangocairo-1.0-0 libcairo2 "$pixbuf_pkg" \
     shared-mime-info fonts-liberation fonts-noto-core fonts-noto-extra
   systemctl enable --now postgresql nginx
 
@@ -822,6 +871,7 @@ setup_tls() {
 
 # -------------------------------------------------------------- firewall ---
 setup_firewall() {
+  if [ "$IS_WSL" = 1 ]; then log "WSL detected; skipping firewall setup."; return 0; fi
   [ "$SETUP_FIREWALL" = 1 ] || { log "Skipping firewall (SETUP_FIREWALL=0)."; return 0; }
   log "Configuring firewall (ufw) and fail2ban..."
   DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends ufw fail2ban
@@ -936,6 +986,7 @@ cmd_logs() {
 cmd="${1:-}"
 case "$cmd" in
   deploy|update|backup|restore)
+    require_systemd
     setup_logging "$@"
     acquire_lock
     ;;
