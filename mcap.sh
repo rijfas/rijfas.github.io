@@ -710,6 +710,13 @@ nginx_common() {
     client_max_body_size 50M;
     server_tokens off;
 
+    # server-level so it never clashes with gzip settings in the stock nginx.conf
+    gzip on;
+    gzip_comp_level 5;
+    gzip_min_length 1024;
+    gzip_vary on;
+    gzip_types text/plain text/css application/json application/javascript text/javascript application/xml image/svg+xml;
+
     location ^~ /.well-known/acme-challenge/ {
         root $ACME_ROOT;
     }
@@ -758,11 +765,6 @@ EOF
 # Managed by deploy.sh
 limit_req_zone \$binary_remote_addr zone=${NAME}_req:10m rate=20r/s;
 limit_req_status 429;
-gzip on;
-gzip_comp_level 5;
-gzip_min_length 1024;
-gzip_vary on;
-gzip_types text/plain text/css application/json application/javascript text/javascript application/xml image/svg+xml;
 EOF
 
   local have_cert=0
