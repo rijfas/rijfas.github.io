@@ -728,12 +728,14 @@ nginx_common() {
         expires 30d;
         access_log off;
         include /etc/nginx/snippets/$NAME-security-headers.conf;
+        $hsts_line
     }
 
     location /media/ {
         alias $PUBLIC_MEDIA_DIR/;
         expires 7d;
         include /etc/nginx/snippets/$NAME-security-headers.conf;
+        $hsts_line
     }
 
     location / {
@@ -767,8 +769,11 @@ limit_req_zone \$binary_remote_addr zone=${NAME}_req:10m rate=20r/s;
 limit_req_status 429;
 EOF
 
-  local have_cert=0
-  [ -f "$CERT_DIR/fullchain.pem" ] && have_cert=1
+  local have_cert=0 hsts_line=""
+  if [ -f "$CERT_DIR/fullchain.pem" ]; then
+    have_cert=1
+    hsts_line='add_header Strict-Transport-Security "max-age=31536000" always;'
+  fi
 
   {
     echo "# Managed by deploy.sh - edits will be overwritten"
@@ -799,7 +804,6 @@ server {
     ssl_session_tickets off;
 
     add_header Strict-Transport-Security "max-age=31536000" always;
-    include /etc/nginx/snippets/$NAME-security-headers.conf;
 
 $(nginx_common)
 }
@@ -811,8 +815,6 @@ server {
     server_name $SERVER_NAME;
     access_log /var/log/nginx/$NAME.access.log;
     error_log  /var/log/nginx/$NAME.error.log;
-
-    include /etc/nginx/snippets/$NAME-security-headers.conf;
 
 $(nginx_common)
 }
